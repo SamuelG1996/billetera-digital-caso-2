@@ -1,0 +1,45 @@
+
+<div class="card shadow-sm">
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0">Nuevo movimiento</h5>
+  </div>
+
+  <div class="card-body">
+
+    <div class="mb-3">
+      <label class="form-label">Tipo de movimiento</label>
+      <select
+        class="form-select"
+        (change)="cambiarTipo($event)">
+        <option value="Gasto" selected>Gasto</option>
+        <option value="Recarga">Recarga</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Monto</label>
+      <input
+        type="number"
+        class="form-control"
+        min="0.01"
+        placeholder="Ingrese el monto"
+        [value]="monto || ''"
+        (input)="cambiarMonto($event)">
+    </div>
+
+
+    @if (tipo === 'Gasto' && monto > saldo()) {
+      <div class="alert alert-danger">
+        Saldo insuficiente para realizar el gasto.
+      </div>
+    }
+
+    <button
+      class="btn btn-primary w-100"
+      (click)="registrar()"
+      [disabled]="monto <= 0 || (tipo === 'Gasto' && monto > saldo())">
+      Registrar movimiento
+    </button>
+
+  </div>
+</div>

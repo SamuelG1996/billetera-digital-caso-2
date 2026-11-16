@@ -1,0 +1,46 @@
+
+<div class="container mt-3" style="max-width: 600px;">
+
+  <h2 class="text-center mb-4">Mi Billetera Digital</h2>
+
+  <div class="card mb-4">
+    <div class="card-body text-center">
+      <h5>Saldo disponible</h5>
+      <h2 class="text-success">S/ {{ saldo }}</h2>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <h5 class="mb-0">Historial de movimientos</h5>
+    </div>
+
+    <div class="card-body">
+
+      @if (movimientos.length > 0) {
+        @for (movimiento of movimientos; track $index) {
+          <div class="d-flex justify-content-between border-bottom py-2">
+            <span>{{ movimiento.tipo }}</span>
+
+            <span [class.text-danger]="movimiento.tipo === 'Gasto'"
+                  [class.text-success]="movimiento.tipo === 'Recarga'">
+              {{ movimiento.tipo === 'Gasto' ? '-' : '+' }} S/ {{ movimiento.monto }}
+            </span>
+          </div>
+        }
+      } @else {
+        <p class="text-center text-muted mb-0">
+          No hay movimientos registrados.
+        </p>
+      }
+
+    </div>
+  </div>
+
+  <app-nuevo-movimiento-component
+    [saldo]="saldo"
+    (movimientoValido)="registrarMovimiento($event)">
+  </app-nuevo-movimiento-component>
+
+</div>
+
