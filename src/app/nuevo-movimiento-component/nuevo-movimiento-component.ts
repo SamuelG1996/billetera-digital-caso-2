@@ -21,9 +21,13 @@ export class NuevoMovimientoComponent {
     this.tipo = (evento.target as HTMLSelectElement).value;
     this.error = '';
   }
+  
   cambiarMonto(evento: Event) {
     this.monto = Number((evento.target as HTMLInputElement).value);
-    this.error = '';
+
+    this.error = this.monto <= 0
+      ? 'Ingrese un monto válido.'
+      : '';
   }
 
   registrar() {

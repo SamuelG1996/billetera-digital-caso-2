@@ -22,6 +22,6 @@ export class BilleteraComponent {
       this.saldo = this.saldo + movimiento.monto;
     }
 
-    this.movimientos.push(movimiento);
+    this.movimientos.unshift(movimiento);
   }
 }
