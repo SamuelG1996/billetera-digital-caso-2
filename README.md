@@ -1,59 +1,28 @@
-# BilleteraDigital
+Billetera Digital
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.7.
+Este proyecto consiste en el desarrollo de una billetera digital utilizando Angular CLI versión 22.2.7.
 
-## Development server
+Descripción del proyecto
 
-To start a local development server, run:
+La aplicación permite gestionar un saldo disponible mediante el registro de gastos y recargas, además de visualizar el historial de movimientos realizados.
 
-```bash
-ng serve
-```
+Componentes
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Se desarrollaron dos componentes funcionales:
 
-## Code scaffolding
+- BilleteraComponent: administra el saldo disponible y el historial de movimientos.
+- NuevoMovimientoComponent: permite registrar gastos y recargas, validando el monto ingresado y el saldo disponible.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Servidor de desarrollo
 
-```bash
-ng generate component component-name
-```
+Para ejecutar la aplicación, utiliza el siguiente comando:  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**ng serve -o**
 
-```bash
-ng generate --help
-```
+La aplicación estará disponible en http://localhost:4200/.
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Tecnologías utilizadas
+- Angular
+- TypeScript
+- HTML
+- Bootstrap
